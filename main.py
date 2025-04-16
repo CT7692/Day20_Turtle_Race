@@ -1,5 +1,5 @@
 from turtle import Turtle, Screen
-from random import randint
+import secrets
 
 
 def place_bet(color_list, screen_obj):
@@ -35,7 +35,7 @@ def race(turtle_list, finish_line, screen_obj, bet):
     line_reached = False
     while not line_reached:
         for turtle in turtle_list:
-            turtle.forward(randint(0, 10))
+            turtle.forward(secrets.SystemRandom().randint(0, 10))
             if turtle.xcor() > finish_line:
                 winning_color = turtle.fillcolor()
                 line_reached = True
